@@ -1,0 +1,15 @@
+{
+    "name": "iman/sendov",
+    "description": "simple sending script",
+    "autoload": {
+        "psr-4": {
+            "Iman\\Sendov\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "imaaarov"
+        }
+    ],
+    "require": {}
+}
