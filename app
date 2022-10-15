@@ -1,8 +1,8 @@
 #!/usr/bin/php
 <?php
 
-use Iman\Sendov\converters\JsonConvert;
-use Iman\Sendov\enum\FileMimeEnum;
+use Iman\Sendov\Converters\JsonConvert;
+use Iman\Sendov\Enum\FileMimeEnum;
 use Iman\Sendov\FileService;
 
 require_once 'vendor/autoload.php';
