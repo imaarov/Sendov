@@ -9,7 +9,7 @@ class FileService {
     public bool $mime_status;
 
     public function __construct(
-        private string $path,
+        public string $path,
 
     )
     {
