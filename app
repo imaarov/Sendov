@@ -4,6 +4,7 @@
 use Iman\Sendov\Converters\JsonConvert;
 use Iman\Sendov\Enum\FileMimeEnum;
 use Iman\Sendov\FileService;
+use Iman\Sendov\SendRequestService;
 
 require_once 'vendor/autoload.php';
 
@@ -19,9 +20,17 @@ $mime = (int)readline("
     1: json
     2: excel
 ");
+$key = (string)readline("Enter your key of file: ");
+$url  = (string)readline("Enter the api url: ");
 $file_service = new FileService(path: PUB_URL . $path);
 $result = match($mime) {
     FileMimeEnum::JSON->value   =>   new JsonConvert($file_service),
     default                     =>   false
 };
 
+$request = new SendRequestService(
+    converter: $result,
+    url: $url,
+    key: $key
+);
+$request->send();

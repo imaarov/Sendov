@@ -2,8 +2,9 @@
 namespace Iman\Sendov\converters;
 
 use Iman\Sendov\FileService;
+use Iman\Sendov\Interface\ConverterInterface;
 
-class JsonConvert {
+class JsonConvert implements ConverterInterface {
 
     public string|array $file_content;
 
@@ -20,7 +21,7 @@ class JsonConvert {
      * @param
      * @return void
      */
-    public function convert_file_content()
+    public function convert_file_content(): void
     {
         $this->file_content = json_decode(
             file_get_contents(
