@@ -28,7 +28,13 @@ class FileService {
     {
         $this->file_status = file_exists($this->path);
     }
-
+  
+    /**
+     * Check file mime is valida for a json file
+     *
+     * @param
+     * @return void
+     */
     public function validate_mime(): void
     {
         $path_array = explode(DIRECTORY_SEPARATOR, $this->path);
