@@ -2,18 +2,54 @@
 namespace Iman\Sendov;
 
 use Iman\Sendov\Interface\ConverterInterface;
-
+use Iman\Sendov\LogService;
 class SendRequestService {
 
     public array $msg = [];
 
     public function __construct(
         protected ConverterInterface $converter,
+        protected LogService $log_service,
         protected string $url,
         protected string $key
     )
     {
+      echo PHP_EOL . "CHECKING INTERNET CONNECTION AND SERVER CONNECTION..." . PHP_EOL;
+      [$net_status, $server_status] = [$this->check_internet_status(), $this->check_internet_status($this->url)];
+      switch (true) {
+        case is_array($net_status):
+          $this->log_service->log($net_status, true);
+          exit;
+          break;
+        case is_array($server_status):
+          $this->log_service->log($server_status, true);
+          exit;
+      }
+    }
 
+    /**
+     * Check for internet connection Or server conection
+     *
+     * @param ?string
+     * @return bool
+     */
+    public function check_internet_status(?string $url = null): bool|array
+    {
+      $connection = @fsockopen(
+        hostname: isset($url) && !empty($url) ? $url : "google.com",
+        port: 80,
+        error_code: $error_code,
+        error_message: $error_message,
+        timeout: 3
+      );
+      if($connection) {
+        fclose($connection);
+        return true;
+      }
+      return [
+        "Err msg: "   =>  $error_message,
+        "Err code: "  =>  $error_code
+      ];
     }
 
     /**
