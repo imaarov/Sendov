@@ -7,6 +7,8 @@ class FileService {
 
     public bool $file_status;
     public bool $mime_status;
+    public string $mime;
+    public string $file;
 
     public function __construct(
         public string $path,
@@ -42,6 +44,8 @@ class FileService {
         $file_array = explode('.', $file);
         $mime       = end($file_array);
 
+        $this->mime = $mime;
+        $this->file = $file;
         $this->mime_status = $mime === FileMimeEnum::JSON->get_mime_name();
     }
 }
