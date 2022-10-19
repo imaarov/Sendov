@@ -11,5 +11,8 @@
             "name": "imaaarov"
         }
     ],
-    "require": {}
+    "require": {
+        "ext-gd": "*",
+        "phpoffice/phpspreadsheet": "^1.25"
+    }
 }
