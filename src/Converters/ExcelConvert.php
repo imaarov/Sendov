@@ -3,15 +3,15 @@ namespace Iman\Sendov\Converters;
 
 use Iman\Sendov\FileService;
 use Iman\Sendov\Interface\ConverterInterface;
-use \PhpOffice\PhpSpreadsheet\IOFactory as IOFactory;
-use \PhpOffice\PhpSpreadsheet\Reader\Xls;
+use \PhpOffice\PhpSpreadsheet\IOFactory;
 // $spread = \PhpOffice\PhpSpreadsheet\IOFactory::createReaderForFile( PUB_URL . "file.xls");
 class ExcelConvert implements ConverterInterface{
 
     public string|array $file_content;
 
     public function __construct(
-        protected FileService $fileService
+        protected FileService $fileService,
+        protected array $required_excel_column
     )
     {
         $this->convert_file_content();
@@ -19,12 +19,19 @@ class ExcelConvert implements ConverterInterface{
 
     public function convert_file_content(): void
     {
-        $spread_obj = new Xls();
-        $spread_obj->setReadDataOnly(true);
-        $spread_obj->load($this->fileService->path);
-        // $data = $spread_obj->getSheet($spread_obj->getFirstSheetIndex());
-        // var_dump($spread_obj->listWorksheetInfo());
-        die($data);
-        // $spread_obj->getSheet();
+        $reader = IOFactory::load($this->fileService->path);
+        $reader_count = $reader->getSheetCount();
+        $sheet = $reader->getSheet(0);
+        $sheet_array = $sheet->toArray(null, true, true, true);
+        $c = 0;
+        $key_data = [];
+        foreach ($sheet_array as $key => $value) {
+            $c++;
+            $coloumn = array_keys($value);
+            $verified_array = array_intersect($coloumn, $this->required_excel_column);
+            var_dump($value);exit;
+        }
+        
+        
     }
 }

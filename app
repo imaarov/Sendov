@@ -33,7 +33,7 @@ $mime = (int)readline("
 $key = (string)readline("Enter your key of file: ");
 $url  = (string)readline("Enter the api url: ");
 $file_service = new FileService(path: PUB_URL . $path);
-$data = new ExcelConvert($file_service);
+$data = new ExcelConvert($file_service, ['A', 'B', 'C', 'D']);
 var_dump($data);
 $result = match($mime) {
     FileMimeEnum::JSON->value   =>   new JsonConvert($file_service),
