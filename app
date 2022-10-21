@@ -1,6 +1,7 @@
 #!/usr/bin/php
 <?php
 
+use Iman\Sendov\Converters\ExcelConvert;
 use Iman\Sendov\Converters\JsonConvert;
 use Iman\Sendov\Enum\FileMimeEnum;
 use Iman\Sendov\FileService;
@@ -32,6 +33,8 @@ $mime = (int)readline("
 $key = (string)readline("Enter your key of file: ");
 $url  = (string)readline("Enter the api url: ");
 $file_service = new FileService(path: PUB_URL . $path);
+$data = new ExcelConvert($file_service);
+var_dump($data);
 $result = match($mime) {
     FileMimeEnum::JSON->value   =>   new JsonConvert($file_service),
     default                     =>   false
