@@ -31,7 +31,7 @@ function app(array $rules): int {
   $path = (string)readline("Enter your file name: ");
   $mime = (int)readline("
     1: json
-    2: excel
+    2: excel(not implemented yet)
   \n");
 
   //? File info and destination url
