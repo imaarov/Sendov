@@ -1,5 +1,5 @@
 # Sendov
-simple sending script for api purpose 
+simple sending script for api purpose (its old repo and have some bug)
 
 ## TODOS
 - ### Support EXCEL
