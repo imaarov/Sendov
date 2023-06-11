@@ -1,8 +1,8 @@
 <?php
 namespace Imaarov\Sendov;
 
-use Iman\Sendov\Interface\ConverterInterface;
-use Iman\Sendov\LogService;
+use Imaarov\Sendov\Interface\ConverterInterface;
+use Imaarov\Sendov\LogService;
 class SendRequestService {
 
     public array $msg = [];
@@ -81,11 +81,17 @@ class SendRequestService {
             
             //execute post
             $res = curl_exec($ch);
-            var_dump([
-                "Key of requested array"      =>      $key,
-                "Value of requested array"    =>      $fields,
-                "Response of requested array" =>      $res
-            ]);
+            // var_dump([
+            //     "Key of requested array"      =>      $key,
+            //     "Value of requested array"    =>      $fields,
+            //     "Response of requested array" =>      $res
+            // ]);
+            echo "\nKey is {$key}\n";
+            foreach ($fields as $key => $value) {
+                echo "{$key}=>{$value}\n";
+            }
+            echo "Response is {$res}\n";
+
             array_push($this->msg,[
                 "Key of requested array"      =>      $key,
                 "Value of requested array"    =>      $fields,

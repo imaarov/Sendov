@@ -3,12 +3,12 @@
     "description": "simple sending script",
     "autoload": {
         "psr-4": {
-            "Iman\\Sendov\\": "src/"
+            "Imaarov\\Sendov\\": "src/"
         }
     },
     "authors": [
         {
-            "name": "imaaarov"
+            "name": "imaarov"
         }
     ],
     "require": {

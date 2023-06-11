@@ -1,5 +1,5 @@
 <?php
-namespace Iman\Sendov\converters;
+namespace Imaarov\Sendov\Converters;
 
 use Imaarov\Sendov\FileService;
 use Imaarov\Sendov\Interface\ConverterInterface;

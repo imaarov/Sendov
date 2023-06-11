@@ -1,7 +1,7 @@
 <?php
 namespace Imaarov\Sendov;
 
-use Iman\Sendov\Enum\FileMimeEnum;
+use Imaarov\Sendov\Enum\FileMimeEnum;
 
 class FileService {
 
@@ -32,7 +32,7 @@ class FileService {
     }
   
     /**
-     * Check file mime is valida for a json file
+     * Check file mime is validate for a json file
      *
      * @param
      * @return void
