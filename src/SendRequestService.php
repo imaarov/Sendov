@@ -1,5 +1,5 @@
 <?php
-namespace Iman\Sendov;
+namespace Imaarov\Sendov;
 
 use Iman\Sendov\Interface\ConverterInterface;
 use Iman\Sendov\LogService;

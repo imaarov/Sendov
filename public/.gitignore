@@ -1,0 +1,5 @@
+!.gitignore
+
+# Supported files
+*.xls
+*.json

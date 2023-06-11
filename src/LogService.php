@@ -1,5 +1,5 @@
 <?php
-namespace Iman\Sendov;
+namespace Imaarov\Sendov;
 
 class LogService {
 

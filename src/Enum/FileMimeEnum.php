@@ -1,5 +1,5 @@
 <?php
-namespace Iman\Sendov\enum;
+namespace Imaarov\Sendov\enum;
 
 
 enum FileMimeEnum: int {

@@ -1,16 +1,16 @@
 #!/usr/bin/php
 <?php
 
-use Iman\Sendov\Converters\ExcelConvert;
-use Iman\Sendov\Converters\JsonConvert;
-use Iman\Sendov\Enum\FileMimeEnum;
-use Iman\Sendov\FileService;
-use Iman\Sendov\SendRequestService;
-use Iman\Sendov\LogService;
+use Imaarov\Sendov\Converters\ExcelConvert;
+use Imaarov\Sendov\Converters\JsonConvert;
+use Imaarov\Sendov\Enum\FileMimeEnum;
+use Imaarov\Sendov\FileService;
+use Imaarov\Sendov\SendRequestService;
+use Imaarov\Sendov\LogService;
 
 require_once 'vendor/autoload.php';
 
-// CONSTANSTS
+// some url constant
 define("BASE_URL", __DIR__ . DIRECTORY_SEPARATOR);
 define("PUB_URL", __DIR__ . DIRECTORY_SEPARATOR . "public". DIRECTORY_SEPARATOR);
 define("LOG_URL", __DIR__ . DIRECTORY_SEPARATOR . "log" . DIRECTORY_SEPARATOR . "data.log");

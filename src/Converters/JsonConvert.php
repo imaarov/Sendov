@@ -1,8 +1,8 @@
 <?php
 namespace Iman\Sendov\converters;
 
-use Iman\Sendov\FileService;
-use Iman\Sendov\Interface\ConverterInterface;
+use Imaarov\Sendov\FileService;
+use Imaarov\Sendov\Interface\ConverterInterface;
 
 class JsonConvert implements ConverterInterface {
 

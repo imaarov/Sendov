@@ -1,8 +1,8 @@
 <?php
 namespace Iman\Sendov\Converters;
 
-use Iman\Sendov\FileService;
-use Iman\Sendov\Interface\ConverterInterface;
+use Imaarov\Sendov\FileService;
+use Imaarov\Sendov\Interface\ConverterInterface;
 use \PhpOffice\PhpSpreadsheet\IOFactory;
 // $spread = \PhpOffice\PhpSpreadsheet\IOFactory::createReaderForFile( PUB_URL . "file.xls");
 class ExcelConvert implements ConverterInterface{

@@ -1,5 +1,5 @@
 {
-    "name": "iman/sendov",
+    "name": "imaarov/sendov",
     "description": "simple sending script",
     "autoload": {
         "psr-4": {
